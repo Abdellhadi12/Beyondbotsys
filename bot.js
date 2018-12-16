@@ -3029,18 +3029,19 @@ client.on('message', message => {
  var prefix = "!"
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
-        let support = message.guild.roles.find("name","Light");
+        let support = message.guild.roles.find("name","Dead");
         let ticketsStation = message.guild.channels.find("name", "TICKETS");
         if(!args) {
             return message.channel.send('الرجاء كتابة سبب التذكرة');
         };
                 if(!support) {
-                    return message.channel.send('**Please make sure that `Light` role exists and it\'s not duplicated.**');
+                    return message.channel.send('**Please make sure that `Dead` role exists and it\'s not duplicated.**');
                 };
             if(!ticketsStation) {
                 message.guild.createChannel("Ticket", "category");
             };
-                message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻`, "text").then(ticket => {
+                message.guild.createChannel(`
+`, "text").then(ticket => {
                     message.delete()
                         message.channel.send(`تم انشاء تذكرتك. [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
@@ -3103,6 +3104,7 @@ client.on('message', message => {
             
     }
 });
+
 
 
 
