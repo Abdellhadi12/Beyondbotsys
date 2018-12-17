@@ -3027,13 +3027,13 @@ client.on('message', message => {
  var prefix = "!"
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
-        let support = message.guild.roles.find("name","nothing");
-        let ticketsStation = message.guild.channels.find("name", "TICKETS");
+        let support = message.guild.roles.find("name","night");
+        let ticketsStation = message.guild.channels.find("name", "Tickts");
         if(!args) {
             return message.channel.send('الرجاء كتابة سبب التذكرة');
         };
                 if(!support) {
-                    return message.channel.send('**Please make sure that `night` role exists and it\'s not duplicated.**');
+                    return message.channel.send('**Please make sure that `nothing` role exists and it\'s not duplicated.**');
                 };
             if(!ticketsStation) {
                 message.guild.createChannel("Ticket", "category");
