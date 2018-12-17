@@ -3126,7 +3126,26 @@ client.on('message', message => {
 
 
 
-
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '524037997809893389').setName("W");
+client.channels.find('id', '524037997809893389').setName("We");
+client.channels.find('id', '524037997809893389').setName("Wel");
+client.channels.find('id', '524037997809893389').setName("Welc");
+client.channels.find('id', '524037997809893389').setName("Welco");
+client.channels.find('id', '524037997809893389').setName("Welcom");
+client.channels.find('id', '524037997809893389').setName("Welcome");
+client.channels.find('id', '524037997809893389').setName("Welcome T");
+client.channels.find('id', '524037997809893389').setName("Welcome To");
+client.channels.find('id', '524037997809893389').setName("Welcome To M");
+client.channels.find('id', '524037997809893389').setName("Welcome To My");
+client.channels.find('id', '524037997809893389').setName("Welcome To My w");
+client.channels.find('id', '524037997809893389').setName("Welcome To My wo");
+client.channels.find('id', '524037997809893389').setName("Welcome To My wor");
+client.channels.find('id', '524037997809893389').setName("Welcome To My worl");
+client.channels.find('id', '524037997809893389').setName("Welcome To My world");
+  }, 3000);
+});
 
 
 
