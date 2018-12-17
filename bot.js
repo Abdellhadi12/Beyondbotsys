@@ -3027,7 +3027,7 @@ client.on('message', message => {
  var prefix = "!"
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
-        let support = message.guild.roles.find("name","night");
+        let support = message.guild.roles.find("name","nothing");
         let ticketsStation = message.guild.channels.find("name", "Tickts");
         if(!args) {
             return message.channel.send('الرجاء كتابة سبب التذكرة');
