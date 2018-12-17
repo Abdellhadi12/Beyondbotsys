@@ -3168,9 +3168,8 @@ member.addRole(member.guild.roles.find('name', 'night'));
 
 
 client.on("message", (message) => {
-    /// DREAM
-   if (message.content.startsWith("!new")) {     /// DREAM
-        const reason = message.content.split(" ").slice(1).join(" ");     /// DREAM
+   if (message.content.startsWith("!new")) {    
+        const reason = message.content.split(" ").slice(1).join(" ");    
         if (!message.guild.roles.exists("name", "night")) return message.channel.send(`لازم تسوي رتبة اسمها \`night\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
         message.guild.createChannel(`ticket-${message.author.username}`, "text").then(c => {
@@ -3179,7 +3178,7 @@ client.on("message", (message) => {
             c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
-            });    /// ALPHA CODES
+            });    
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
@@ -3209,10 +3208,10 @@ client.on("message", (message) => {
                        max: 1,
                        time: 10000,
                        errors: ['time'],
-                   })    /// DREAM
+                   })   
                    .then((collected) => {
                        message.channel.delete();
-                   })    /// DREAM
+                   })    
                    .catch(() => {
                        m.edit('Ticket close timed out, the ticket was not closed.').then(m2 => {
                            m2.delete();
