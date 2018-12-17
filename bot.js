@@ -3021,6 +3021,8 @@ client.on("guildMemberAdd", member => {
 
 
 
+
+
 client.on('message', message => {
  var prefix = "!"
     if(message.content.startsWith(prefix + 'new')) {
@@ -3036,8 +3038,7 @@ client.on('message', message => {
             if(!ticketsStation) {
                 message.guild.createChannel("Ticket", "category");
             };
-                message.guild.createChannel(`
-`, "text").then(ticket => {
+                message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻`, "text").then(ticket => {
                     message.delete()
                         message.channel.send(`تم انشاء تذكرتك. [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
@@ -3100,7 +3101,6 @@ client.on('message', message => {
             
     }
 });
-
 
 
 
