@@ -3177,18 +3177,34 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-              if (!message.channel.guild) return;
-      if(message.content =='!mem')
-      var n3k4a = new Discord.RichEmbed()
-      .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL)
-      .setTitle('🌷| Members info')
-      .addBlankField(true)
-      .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
-      message.channel.send(n3k4a );
-    });
 
+client.on('message', message => {
+        if (message.content === prefix + "dt") {
+     let user = message.mentions.users.first();
+     var args = message.content.split(" ").slice(1);
+     var men = message.mentions.users.first();
+        var heg;
+        if(men) {
+            heg = men
+        } else {
+            heg = message.author
+        }
+      var mentionned = message.mentions.members.first();
+         var h;
+        if(mentionned) {
+            h = mentionned
+        } else {
+            h = message.member
+        }
+       moment.locale('en-TN'); //TN
+      var id = new  Discord.RichEmbed()
+         .setColor("RANDOM")
+       
+         .setDescription([`**Time** : ${moment().format('HH:mm:ss A')}**Date** : ${moment().format('YYYY/M/D - MMMM ')}**Today** : ${moment().format('dddd')}`])
+.setFooter(`${heg.username}`,heg.avatarURL)
+         message.channel.send(id)
+}
+});
 
 
 
