@@ -3209,6 +3209,19 @@ client.on('message', message => {
 
 
 
+client.on('guildMemberAdd', (member) => {
+    var channel = member.guild.channels.find('name', 'welcome');
+channel.send(`@${member.user.tag} تم اعطاء العضو رتبت night `)
+member.addRole(member.guild.roles.find('name', 'night'));
+});
+
+
+
+
+
+
+
+
 
 //MHSTR END NOW THIS IS END
 client.login(process.env.BOT_TOKEN);
