@@ -3049,52 +3049,6 @@ client.on('message', message => {
 
 
 
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '524039236278681649').setName("W");
-client.channels.find('id', '524039236278681649').setName("We");
-client.channels.find('id', '524039236278681649').setName("Wel");
-client.channels.find('id', '524039236278681649').setName("Welc");
-client.channels.find('id', '524039236278681649').setName("Welco");
-client.channels.find('id', '524039236278681649').setName("Welcom");
-client.channels.find('id', '524039236278681649').setName("Welcome");
-client.channels.find('id', '524039236278681649').setName("Welcome T");
-client.channels.find('id', '524039236278681649').setName("Welcome To");
-client.channels.find('id', '524039236278681649').setName("Welcome To M");
-client.channels.find('id', '524039236278681649').setName("Welcome To My");
-client.channels.find('id', '524039236278681649').setName("Welcome To My w");
-client.channels.find('id', '524039236278681649').setName("Welcome To My wo");
-client.channels.find('id', '524039236278681649').setName("Welcome To My wor");
-client.channels.find('id', '524039236278681649').setName("Welcome To My worl");
-client.channels.find('id', '524039236278681649').setName("Welcome To My world");
-  }, 3000);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3175,7 +3129,26 @@ member.addRole(member.guild.roles.find('name', 'night'));
 
 
 
-
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '524039236278681649').setName("W");
+client.channels.find('id', '524039236278681649').setName("We");
+client.channels.find('id', '524039236278681649').setName("Wel");
+client.channels.find('id', '524039236278681649').setName("Welc");
+client.channels.find('id', '524039236278681649').setName("Welco");
+client.channels.find('id', '524039236278681649').setName("Welcom");
+client.channels.find('id', '524039236278681649').setName("Welcome");
+client.channels.find('id', '524039236278681649').setName("Welcome T");
+client.channels.find('id', '524039236278681649').setName("Welcome To");
+client.channels.find('id', '524039236278681649').setName("Welcome To M");
+client.channels.find('id', '524039236278681649').setName("Welcome To My");
+client.channels.find('id', '524039236278681649').setName("Welcome To My w");
+client.channels.find('id', '524039236278681649').setName("Welcome To My wo");
+client.channels.find('id', '524039236278681649').setName("Welcome To My wor");
+client.channels.find('id', '524039236278681649').setName("Welcome To My worl");
+client.channels.find('id', '524039236278681649').setName("Welcome To My world");
+  }, 3000);
+});
 
 
 
