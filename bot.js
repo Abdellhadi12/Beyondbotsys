@@ -3136,7 +3136,7 @@ client.on("message", (message) => {
 
 
 
-
+client.on('ready',async () => { client.channels.find(ch => ch.id === "525436165743181826" && ch.type === 'voice').join(); });
 
 
 
