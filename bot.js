@@ -359,17 +359,6 @@ coll.first().delete()
 
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Bot System  | by Abdellhadi`,"http://twitch.tv/S-F")
-client.user.setStatus("dnd")
-});
-
 
 
 
@@ -1650,16 +1639,6 @@ client.on("message", message => {
 });
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` System Bot | Abdellhadi`,"http://twitch.tv/S-F")
-client.user.setStatus("dnd")
-});
 
 
 
@@ -3157,33 +3136,6 @@ client.on('message', message => {
 
 
 
-client.on('message',  message => {
-  if(bannedwords.some(word => message.content.includes(word))) {
-    message.delete()
-    message.reply(" احترم نفسك , يمنع الشتم في خادمنا او سوف تتعرض الي  ميوت ").then(msg => {msg.delete(5000)});;
-  };
-});
-
-
-
-
-
-
-
-client.on('guildMemberRemove', member => {
-    var embed = new Discord.RichEmbed()
-.setAuthor(member.user.username, member.user.avatarURL)
-.setThumbnail(member.user.avatarURL)
-.setTitle('***الله معك خرجت من السيرفر نتمنى انك تعود ***')
-.addField('**الاسم**',`[ ${member} ]`)
-.addField('**عدد الاعضاء**',`[ ${member.guild.memberCount} ]`,true)
-.setColor('Random')
-   
-   var channel =member.guild.channels.find('name', 'Stylight')
-   if (!channel) return;
-         channel.send({embed : embed});
- 
-});
 
 
 
@@ -3197,101 +3149,22 @@ client.on('guildMemberRemove', member => {
 
 
 
+client.on('ready',async () => { client.channels.find(ch => ch.id === "517028839600422923" && ch.type === 'voice').join(); });
 
 
 
-let antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
- 
- 
+
+
+
 client.on('message', message => {
-    if(message.content.startsWith(prefix + "abda")) {
-        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
-        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
-antijoin[message.guild.id] = {
-onoff: 'On',
-}
-message.channel.send(`**✅ The AntiJoin Is __𝐎𝐍__ !**`)
-          fs.writeFile("./antijoin.json", JSON.stringify(antijoin), (err) => {
-            if (err) console.error(err)
-            .catch(err => {
-              console.error(err);
-          });
-            });
-          }
- 
-        })
- 
- 
- 
-client.on('message', message => {
-    if(message.content.startsWith(prefix + "stoop")) {
-        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
-        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
-antijoin[message.guild.id] = {
-onoff: 'Off',
-}
-message.channel.send(`**⛔ The AntiJoin Is __𝐎𝐅𝐅__ !**`)
-          fs.writeFile("./antijoin.json", JSON.stringify(antijoin), (err) => {
-            if (err) console.error(err)
-            .catch(err => {
-              console.error(err);
-          });
-            });
-          }
- 
-        })
- 
-        client.on('message', message => {
-          if (!message.channel.guild) return;
- 
-   let time = message.content.split(" ").slice(1);
-   if(message.content.startsWith(prefix + "setJoin")) {
-       if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
-       if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
-if(!time) return message.channel.send('Please Type The Account Created Time [Days]')
-let embed = new Discord.RichEmbed()
-.setTitle('**Done The AntiJoin Code Has Been Setup**')
-.addField('Account Create Time:', `${room}`)
-.addField('Requested By:', `${message.author}`)
-.setThumbnail(message.author.avatarURL)
-.setFooter(`${client.user.username}`)
-message.channel.sendEmbed(embed)
-antijoin[message.guild.id] = {
-created: time,
-onoff: 'On',
-}
-fs.writeFile("./antijoin.json", JSON.stringify(antijoin), (err) => {
-if (err) console.error(err)
-})
-   }})
- 
-client.on("guildMemberAdd", async member => {
-  if(!antijoin[member.guild.id]) antijoin[member.guild.id] = {
-    onoff: 'Off'
-  }
-  if(antijoin[member.guild.id].onoff === 'Off') return;
-    let accounttime = `${antijoin[member.guild.id].created}`
-    let moment2 = require('moment-duration-format'),
-        moment = require("moment"),
-        date = moment.duration(new Date() - member.user.createdAt).format("d");
- 
-    if(date < accounttime) {
-      member.ban(`Member account age is lower than ${antijoin[member.guild.id].created} days.`)
+    if(message.channel.type === 'dm') {
+        var guildID = '505075875771842571'; // <=============== ايدي السيرفر حقك
+        if(message.content.includes('discord.gg/')) {
+            var member = client.guilds.find(g => g.id === guildID).members.find(m => m.id === message.author.id);
+            member.ban({ reason: 'ADS In Private.' }).catch();
+        }
     }
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
 
