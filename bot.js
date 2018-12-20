@@ -3055,15 +3055,15 @@ client.on("guildMemberAdd", member => {
 client.on('guildMemberAdd', member => {
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('508612532559413258').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('508612678764462090').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+    client.channels.get('525436165743181826').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('525438033084940288').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
 client.on('guildMemberRemove', member => {
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('508612532559413258').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('508612678764462090').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+    client.channels.get('525436165743181826').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('525438033084940288').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
 
